@@ -1,0 +1,52 @@
+{% extends 'layout/body-register-login.html' %}
+{% load static %}
+
+{% block ico %}
+{% if setting.active_setting %}
+<!-- enter -->
+<link rel="icon" type="image/x-icon" href="{% if setting.ico_image_therty_by_therty_px %}{{ setting.ico_image_therty_by_therty_px.url }}{% else %} {% static 'IMG/icon.ico' %}{% endif %}">
+{% else %}
+<link rel="icon" type="image/x-icon" href="{% static 'IMG/icon.ico' %}">
+{% endif %}
+{% endblock ico %}
+
+{% block css %}
+<link href="{% static 'css/register-login/register.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+{% block title %}
+Ingress
+{% endblock title %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<h5 class="alert-session">
+    Usted ya ha iniciado sesion, <a href="{% url 'index' %}" title="Go to main page">Clic aqui</a> para ir a la pagina
+    principal
+</h5>
+{% else %}
+<form method="POST" class="form-general">
+    <div class="block1">
+        <!-- Add token -->
+        <p class="register-msg">{{ msg }}</p>
+        <p class="mano">Register</p>
+    </div>
+    <div>
+        {% csrf_token %}
+    </div>
+    <div class="form-general-data">
+        <!-- Get Form  -->
+        {{ form.as_div }}
+    </div>
+    <div class="block2">
+        <input type="submit" value="Register" class="btn-submit">
+    </div>
+</form>
+{% endif %}
+
+{% endblock content %}
+
+{% block footer %}
+{% include 'layout/footer.html' %}
+{% endblock footer%}

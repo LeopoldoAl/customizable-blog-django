@@ -1,0 +1,92 @@
+
+.alert-session
+{
+    text-align: center;
+}
+
+.form-general
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-general-data>div, .block2>div
+{
+    margin-bottom: 20px;
+}
+
+.change-password a
+{
+    text-decoration: none;
+}
+
+.change-password:hover a
+{
+    color: rgb(100, 0, 100);
+}
+
+.mano
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.mano, .register-msg
+{
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+.register-msg
+{
+    margin-top: 10px;
+    color: rgb(0, 0, 255);
+    font-style:italic;
+    font-weight: bold;
+}
+
+.form-general-data div input
+{
+    border: 1px solid rgba(0,0,0, 0.1);
+    background: rgb(240, 240, 240);
+    border-radius: 20px;
+    padding-left: 10px;
+    height: 22px;
+    width: 200px;
+}
+
+#id_photo>input
+{
+
+}
+
+.form-general-data div textarea
+{
+    border: 1px solid rgba(0,0,0, 0.1);
+    background: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding-left: 13px;
+    padding-top: 10px;
+    width: 200px;
+    height: 100px;
+    resize: none;
+}
+
+.btn-submit
+{
+    background: rgb(0,0,0);
+    padding: 10px 20px;
+    color: rgb(255,255,255);
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100px;
+    transition: background 0.15s;
+}
+
+.btn-submit:hover
+{
+    color: rgb(255,255,0);
+    background: rgb(50, 0, 50);
+}

@@ -1,0 +1,89 @@
+.my-notifications-seen
+{
+    display: flex;
+    border: 5px dotted rgb(0, 0, 0);
+    padding-top: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color:rgba(255,239,213,0.8); /*papayawhip;*/
+    padding-bottom:10px;
+}
+
+.my-notifications-seen:last-child
+{
+    margin-bottom: 0px;
+}
+
+.my-notifications-seen>div
+{
+    margin-right: 10px;
+}
+
+.my-notifications-seen>div:nth-child(1)
+{
+    margin-left: 10px;
+}
+
+.my-notifications-seen>.img-profile
+{
+    width: 40px;
+    height: 40px;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.my-notifications-seen>.img-profile>.img-profile-real
+{
+    object-fit:cover;
+    object-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.my-notifications-seen>.comment-description
+{
+    text-align: justify;
+}
+
+.my-notifications-seen>.comment-description .name
+{
+    color: brown;
+    font-weight:900;
+}
+
+.my-notifications-seen>.comment-description .article
+{
+    font-style: oblique;
+    color:blue;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:all 2s;
+}
+
+.my-notifications-seen>.comment-description .article:active
+{
+    color:black;
+    opacity: 0.8;
+}
+
+.my-notifications-seen>.comment-description .article:visited
+{
+    color:green;
+    opacity: 0.8;
+}
+
+.my-notifications-seen>.comment-description .article:hover
+{
+    color:brown;
+    opacity: 0.8;
+}
+
+
+.my-notifications-seen>.comment-description-date
+{
+    font-style:oblique;
+    color:#8a2be2;
+    font-weight: bolder;
+    font-size: 0.7em;
+}

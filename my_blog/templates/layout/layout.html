@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    {% load static %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="{% static 'css/body/general.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/Header.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/body.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/search.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/bar-right.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/gost-data.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/body/gost-menu.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- http://jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- http://getbootstrap.com/ -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+    <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+    <!-- http://handlebarsjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="{% static 'JS/script.js' %}"></script>
+    <script src="{% static 'JS/input-with-prediction.js' %}"></script>
+    {% block ico %} {% endblock ico %}
+
+    <!-- Bloque js cambiante -->
+    {% block js %} {% endblock js %}
+    <!-- Bloque css cambiante -->
+    {% block css %} {% endblock css %}
+    <title>{% block title %} {% endblock title %}</title>
+    <style>
+{% if setting.active_setting %}
+    .space-left
+{
+	background: linear-gradient(to left,{{ setting.background_color_head_footer }} 25%, {{ setting.background_gradient_color_head }} );
+}
+.header-title
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em;
+	background: {{ setting.background_color_head_footer }};
+    color: {{ setting.color_font_head }};
+}
+.space-right
+{
+	background: linear-gradient(to right,{{ setting.background_color_head_footer }} 25%, {{ setting.background_gradient_color_head }} );
+}
+
+.f
+{
+    background: {{ setting.background_color_head_footer }};
+}
+
+.gostmenu
+{
+    background: {{ setting.background_color_head_footer }};
+}
+
+.gostdata
+{
+    background: {{ setting.background_color_head_footer }};
+}
+
+.words-menus
+{
+	background: {{ setting.background_color_head_footer }};
+}
+
+
+{% else %}
+   .space-left
+{
+	background: linear-gradient(to left,rgb(0, 0, 0) 25%, rgb(100, 100,100) );
+}
+.header-title
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em;
+	background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+ .space-right
+{
+	background: linear-gradient(to right,rgb(0, 0, 0) 25%, rgb(100, 100,100) );
+}
+
+.f
+{
+    background: rgb(0, 0, 0);
+}
+{% endif %}
+    </style>
+</head>
+
+<body>
+<!-- Incluir menú -->
+{% include 'layout/menu.html' %}
+<div class="all-content">
+    <div class="first-part">
+        <div class="space-left"></div>
+        <div >
+            <p class="header-title" >{% block description %}{% endblock description %}</p>
+        </div>
+        <div class="space-right"></div>
+    </div>
+    <div class="container">
+        <div id="l" class="searching-exac">{% block content %}{% endblock content %}</div>
+        <div id="r">{% include 'layout/right-bar.html' %}</div>
+    </div>
+    <div class="f"><div >All of rights reserved by Leopoldo Alvarado Gomez</div></div>
+    {% include 'layout/gostmenu.html' %}
+    {% include 'layout/gostdata.html' %}
+    <div class="my-notifications-main"></div>
+    {% block jsn %} {% endblock jsn %}
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% load static %}
+<form id='unique' class="comment">{% csrf_token %}
+    {{ comment_form.value }}
+    <div id="five-starts" class="stars">
+        <span id="one">&#x2605;</span>
+        <span id="two">&#x2605;</span>
+        <span id="three">&#x2605;</span>
+        <span id="four">&#x2605;</span>
+        <span id="five">&#x2605;</span>
+    </div>
+    <div class="message-error"><p id="msg-comment"></p></div>
+    <div class="comment-msg">{{ comment_form.comment }}</div>
+    <div class="comment-send"><input class="sending" id="commentary" type="button" value="Public Commentary"></div>
+</form>

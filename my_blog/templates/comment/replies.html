@@ -1,0 +1,34 @@
+{% load static %}
+{% if answers %}
+{% for replies in answers %}
+<div class="replies">
+    <div class="replies-left-side">
+        <div class="replies-left-side-wrap">
+            {% if replies.user_id.profile.photo %}
+            <img class="img-profile" src="{{ replies.user_id.profile.photo.url }}"
+                 alt="{{ replies.user_id.first_name }} {{ replies.user_id.last_name }}">
+            {% else %}
+            <img class="img-profile" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}"
+                 alt="{{ replies.user_id.first_name }} {{ replies.user_id.last_name }}">
+            {% endif %}
+        </div>
+    </div>
+    <div class="replies-right-side">
+        <div class="comment-date">
+            {% if comment.user_id.profile.photo %}
+            <div class="comment-date-first"><p>{{ replies.user_id.profile.user.first_name }}...</p>
+                <p>&nbsp;commented to</p>
+                <p>&nbsp;{{ user_commented.user_id.profile.user.first_name }}...</p></div>
+            <div class="comment-date-second"><p class="js-comment-date">{{ replies.created }}</p></div>
+            {% else %}
+            <div class="comment-date-first"><p>{{ replies.user_id.first_name }}...</p>
+                <p>&nbsp;commented to</p>
+                <p>&nbsp;{{ user_commented.user_id.first_name }}...</p></div>
+            <div class="comment-date-second"><p class="js-comment-date">{{ replies.created }}</p></div>
+            {% endif %}
+        </div>
+        <div class="replies-fetch-comment">{{ replies.reply }}</div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}

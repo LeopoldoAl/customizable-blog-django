@@ -1,0 +1,97 @@
+{% load static %}
+<div class="gostdata">
+    {% if request.user.is_authenticated %}
+    {% if request.user.profile and request.user.profile.photo.url %}
+    <div class="img-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            <img class="img-profile" alt="{{ request.user.username }}" src="{{ request.user.profile.photo.url }}"
+                 alt="View profile">
+        </a>
+    </div>
+    {% if request.user.first_name %}
+    <div class="words-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            {{ request.user.first_name|truncatewords:7 }}&nbsp;{{ request.user.last_name|truncatewords:7 }}
+        </a>
+    </div>
+    {% else %}
+    <div class="words-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            {{ request.user.username|truncatewords:14 }}
+        </a>
+    </div>
+    {% endif %}
+    <div class="words-menus">
+        <a href="{% url 'edit_profile' %}">
+            Edit profile
+        </a>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_staff and request.user.is_superuser %}
+    <div class="words-menus">
+        <a href="{% url 'admin:index' %}">
+            Go to admin
+        </a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <div class="words-menus">
+        <a href="{% url 'logout' %}">
+            Log out
+        </a>
+    </div>
+    {% else %}
+    <div class="img-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            <img class="img-profile" alt="user" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}" alt="View profile">
+        </a>
+    </div>
+    {% if request.user.first_name %}
+    <div class="words-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            {{ request.user.first_name|truncatewords:14 }}
+        </a>
+    </div>
+    {% else %}
+    <div class="words-menus">
+        <a href="{% url 'view_profile' request.user.pk %}" title="View profile">
+            {{ request.user.username|truncatewords:14 }}
+        </a>
+    </div>
+    {% endif %}
+    <div class="words-menus">
+        <a href="{% url 'edit_profile' %}">
+            Edit profile
+        </a>
+    </div>
+    <div class="words-menus">
+        <a href="{% url 'logout' %}">
+            Log out
+        </a>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <!-- Here -->
+    <div class="img-menus">
+        <a href="{% url 'register' %}" title="Register">
+            <img class="img-profile" alt="user" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}" alt="Register">
+        </a>
+    </div>
+    <div class="words-menus-profile">Unknown</div>
+    <div class="words-menus">
+        <a href="{% url 'register' %}">
+            Register
+        </a>
+    </div>
+    <div class="words-menus">
+        <a href="{% url 'logout' %}">
+            Log in
+        </a>
+    </div>
+    {% endif %}
+
+
+</div>

@@ -1,0 +1,112 @@
+.my-notifications-main
+{
+    display:none;
+    overflow-y: auto;
+    width: 300px;
+    border:5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    position:fixed;
+    top: 74px;
+    right: 5px;
+    background:#000;
+    max-height:-webkit-fill-available; /* We take all the space available in th height in the browser */
+    opacity: 0;
+}
+.waiting
+{
+    width: 300px;
+    background-color:papayawhip;
+    font-weight: bolder;
+    padding: 10px;
+    font-style: italic;
+    color: rgb(0,0,0);
+}
+.my-notifications
+{
+    display: flex;
+    border: 5px dotted rgb(0, 0, 0);
+    padding-top: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color:rgba(255,239,213,1); /*papayawhip;*/
+    padding-bottom:10px;
+}
+
+.my-notifications:last-child
+{
+    margin-bottom: 0px;
+}
+
+.my-notifications>div
+{
+    margin-right: 10px;
+}
+
+.my-notifications>div:nth-child(1)
+{
+    margin-left: 10px;
+}
+
+.my-notifications>.img-profile
+{
+    width: 40px;
+    height: 40px;
+    border: 2px dotted rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.my-notifications>.img-profile>.img-profile-real
+{
+    object-fit:cover;
+    object-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.my-notifications>.comment-description
+{
+    text-align: justify;
+}
+
+.my-notifications>.comment-description>.name
+{
+    color: brown;
+    font-weight:900;
+}
+
+.my-notifications>.comment-description>.article
+{
+    font-style: oblique;
+    color:blue;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:all 2s;
+}
+
+.my-notifications>.comment-description>.article:active
+{
+    color:black;
+    opacity: 0.8;
+}
+
+.my-notifications>.comment-description>.article:visited
+{
+    color:green;
+    opacity: 0.8;
+}
+
+.my-notifications>.comment-description>.article:hover
+{
+    color:brown;
+    opacity: 0.8;
+}
+
+
+.my-notifications>.comment-description-date
+{
+    font-style:oblique;
+    color:#8a2be2;
+    font-weight: bolder;
+    font-size: 0.7em;
+}

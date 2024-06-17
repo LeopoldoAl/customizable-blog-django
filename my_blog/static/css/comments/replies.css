@@ -1,0 +1,153 @@
+.replies
+{
+	display: grid;
+	grid-template-columns: 44px 1fr;
+	background: rgb(100, 100, 100);
+	border-radius: 20px 20px 20px 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.replies-left-side
+{
+	display: flex;
+	margin-top: 0;	
+	background: rgb(100, 100, 100);
+	width: 44px;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.replies-right-side
+{
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	padding-left: 10px;
+	border-radius: 20px;
+	padding-top: 10px;
+	margin-right: 10px;
+}
+
+.comment-date
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.comment-date-first
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.comment-date-first>p
+{
+	font-size: 0.8em;
+}
+
+.comment-date-first>p:nth-of-type(2)
+{
+	color: rgb(255,255,0);
+}
+
+.comment-date-second
+{
+	display: flex;
+	flex: 1;	
+	flex-direction: row;
+	justify-content: end;
+}
+
+.js-comment-date
+{
+	padding-right: 10px;
+}
+
+.comment-date>p:first-child
+{
+	font-size: 0.8em;
+	margin: 0;
+}
+
+.js-comment-date
+{
+	font-size: 11px;	
+	margin: 0;
+}
+
+.replies-fetch-comment
+{
+	margin-bottom: 20px;
+	font-size: 1em;
+	font-style: italic;
+	margin-top: 20px;
+}
+
+.replies .replies-left-side-wrap
+{
+	height: 20px;
+	width: 20px;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.replies .replies-left-side-wrap .img-profile
+{
+	height: 20px;
+	width: 20px;
+	object-fit: cover;
+	objedt-direction: center;
+	border-radius: 10px;
+}
+
+/* This class is introduced by Javascript */
+.see-less
+{
+    position: absolute;
+    top: -12px;
+    left: calc(50% - 23.45px);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px 10px;
+    font-size: 0.7em;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(255,255,255);
+    color: rgb(0, 0, 0);
+    z-index: 100;
+    transition: background 0.15s;
+}
+
+.see-less:hover
+{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 0);
+}
+
+.twinkling-stop{
+-webkit-animation: 2s twinkling 5;
+}
+.twinkling{
+opacity: 0.5;
+-webkit-animation: 2s twinkling infinite;
+}
+
+@-webkit-keyframes twinkling{
+50%{
+	opacity: 0.5;
+}
+25%{
+	opacity: 0.25;
+}
+75%{
+	opacity: 0.25;
+}
+100%{
+	opacity: 0;
+}
+
+}

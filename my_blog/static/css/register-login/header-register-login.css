@@ -1,0 +1,74 @@
+.header
+{
+	display: flex;
+	height: 74px;
+	justify-content:space-between;
+	background:black;
+	align-items:center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid transparent;
+}
+
+
+.menu-login-register li
+{
+	display:inline;
+    margin-left: 6px;
+}
+
+.menu-login-register li:last-child
+{
+	display:inline;
+    margin-right: 20px;
+}
+
+.menu-login-register li a
+{
+	text-decoration:none;
+	color: rgb(255, 255, 0);
+}
+
+.menu-login-register li a:hover
+{
+	color: rgb(255, 255, 255);
+}
+
+.menu-login-register li a:active
+{
+	color: rgb(0, 255, 255);
+}
+
+
+.blog-logo
+{
+	height: 30px;
+	object-fit:cover;
+	object-position: center;
+}
+
+.logo
+{
+    margin-left: 10px;
+}
+
+.right-side
+{
+	display:flex;
+	flex:1;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+@media (max-width: 603px)
+{
+
+.menu-login-register
+{
+	display:none;
+}
+
+}

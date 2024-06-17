@@ -1,0 +1,46 @@
+.form-general
+{
+    width: 100%;
+    text-align: center;
+}
+
+.form-general>div:first-child
+{
+    display:flex;
+    flex-direction: column;
+    align-item: center;
+}
+
+.form-general>div>.mano
+{
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.form-general>div>div:nth-of-type(4)
+{
+    margin-top: 5px;
+    font-size: 1em;
+    font-style: italic;
+    color: rgb(255, 0, 0);
+}
+
+.form-general>div>div>.input-login
+{
+    background: rgb(0,0,0);
+    padding: 10px 20px;
+    color: rgb(255,255,255);
+    border-radius: 20px;
+    cursor: pointer;
+    width: 150px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-general>div>div>.input-login:hover
+{
+    color: rgb(255,255,0);
+    background: rgb(50, 0, 50);
+}

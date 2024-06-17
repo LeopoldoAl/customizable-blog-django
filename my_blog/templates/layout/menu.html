@@ -1,0 +1,84 @@
+{% load static %}
+<style>
+{% if setting.active_setting %}
+    .header
+    {
+        background: {{ setting.background_color_head_footer }};
+    }
+{% else %}
+    .header
+    {
+        background: rgb(0,0,0);
+    }
+{% endif %}
+</style>
+<header class="header">
+    <div class="section-left">
+        <!--
+        <div class="menu-main">
+            <div class="main-pages"><a href='#'>About it</a></div>
+            <div class="main-pages"><a href='#'>Services</a></div>
+            <div class="main-pages"><a href='#'>About us</a></div>
+        </div>
+        -->
+
+        <!-- number 1 -->
+        <div class="menu">
+            <!--options -->
+            <img class="menu-options logomenu" alt="hamburger menu" src="{% if setting.menu_image %} {{ setting.menu_image.url }} {% else %} {% static 'IMG/options.png' %} {% endif %}">
+        </div>
+        <!-- number 2 -->
+        <div class="logo">
+            <!--Logo-->
+            <a href="{% url 'index' %}"><img alt="menu log" class="blog-logo" src="{% if setting.logo_image %} {{ setting.logo_image.url }} {% else %} {% static 'IMG/blog.png' %} {% endif %}"></a>
+        </div>
+    </div>
+    <!-- number 3 -->
+    <div class="section-middle">
+        <div class="section-middle-wrap">
+            <input class="section-middle-more-search typeahead" type="text" placeholder="Search">
+            <button class="section-middle-more-action"><img class="searching" src="{% static 'IMG/searching.png' %}"
+                                                            alt="Search"></button>
+        </div>
+    </div>
+    <div class="section-right">
+        <!-- number 5 -->
+        <!-- if the user is authenticated in the site we show this -->
+        {% if request.user.is_authenticated %}
+        <!-- 0 -->
+        <div class="notify">
+            <!-- Notifications -->
+            <img class="notifications" alt="notify" src="{% if setting.notification_image %} {{ setting.notification_image.url }} {% else %}{% static 'IMG/notifications.png' %} {% endif %}">
+        {% if notifications and thereIsNotifications > 0 %}
+                <div class="notify-count">{{ thereIsNotifications }}</div>
+            {% endif %}
+        </div>
+        {% if request.user.profile and request.user.profile.photo.url %}
+        <!-- 1 -->
+        <div class="logoSign pseudo-class">
+            <!--LogoSign-->
+            <img class="logo-sign" alt="{{ request.user.username }}" src="{{ request.user.profile.photo.url }}">
+        </div>
+        {% else %}
+        <!-- 2 -->
+        <div class="logoSign pseudo-class">
+            <!--LogoSign-->
+            <img class="logo-sign" alt="user" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}">
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="logoSign" style="">
+            <!--LogoSign-->
+            <img class="logo-sign" alt="user" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}">
+        </div>
+        {% endif %}
+
+        {% if not request.user.is_authenticated %}
+        <!-- if the user is not authenticated in the site we show this -->
+        <div class="menu-main">
+            <div class="main-pages"><a href="{% url 'register' %}">Register </a></div>
+            <div class="main-pages"><a href="{% url 'login' %}">Log in</a></div>
+        </div>
+        {% endif %}
+    </div>
+</header>

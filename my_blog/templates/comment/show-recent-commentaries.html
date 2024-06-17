@@ -1,0 +1,47 @@
+{% load static %}
+{% if old_comment %}
+<form id="old-comment{{ old_comment.id }}" class="comment-reply">
+    <div class="left-side">
+        {% if old_comment.user_id.profile.photo %}
+        <div class="left-side-wrap">
+            <img class="img-profile" alt="{{ old_comment.user_id.first_name }} {{ old_comment.user_id.last_name }}"
+                 src="{{ old_comment.user_id.profile.photo.url }}" title="user">
+        </div>
+        {% else %}
+        <div class="left-side-wrap">
+            <img class="img-profile" src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}"
+                 alt="{{ old_comment.user_id.first_name }} {{ old_comment.user_id.last_name }}" title="user">
+        </div>
+        {% endif %}
+    </div>
+    <div class="right-side">
+        <div id="five-starts" class="stars">
+            <!-- http://docs.djangoproject.com/en/dev/ref/templates/builtins/ -->
+            <!-- We display 5 stars by default -->
+            {% with old_comment.value as starts %}
+            {% with '1 2 3 4 5' as list %}
+            {% for i in list.split %}
+            {% if i|floatformat:"0" <= starts|floatformat:"0" %}
+            <span id="star-{{ i }}">&#x2605;</span>
+            {% endif %}
+            {% endfor %}
+            {% endwith %}
+            {% endwith %}
+        </div>
+        <div class="comment-date">
+            {% if old_comment.user_id.profile.photo %}
+            <p>{{ old_comment.user_id.profile.user.first_name }} {{ old_comment.user_id.profile.user.last_name }}</p>
+            {% else %}
+            <p>{{ old_comment.user_id.first_name }} {{ old_comment.user_id.last_name }}</p>
+            {% endif %}
+            <p id="js-comment-date">{{ old_comment.created }}</p>
+        </div>
+        <div class="fetch-comment" id="fetch-comment">{{ old_comment.comment }}</div>
+        <div class="re-sen-com">
+            <div class="comment-number"><p>{{ old_comment.number_of_reply }}</p></div>
+            <div class="comment-reply-re"><p>Replies</p></div>
+            <div class="comment-send"><input class="sending-comm" type="button" value="Reply"></div>
+        </div>
+    </div>
+</form>
+{% endif %}

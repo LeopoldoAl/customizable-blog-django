@@ -1,0 +1,35 @@
+.gostmenu
+{
+	display: none;
+	flex-direction: column;
+	text-align: center;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	width: 190px;
+	border: 1px solid rgb(0, 220, 0);
+	border-radius: 0px 20px 20px 0px;
+	position: fixed;
+	top: 74px;
+	left: 0;
+	bottom: 0;
+	overflow-y:auto;
+}
+.gostmenu .bar-articles-info-description
+{
+	color: rgb(255, 255, 255);
+}
+
+.gostmenu .words-menus-profile
+{
+    padding-bottom: 10px;
+    border-bottom: 1px limegreen solid;
+}
+.img-profile
+{
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	object-direction: center;
+	border-radius: 25px;
+	background: rgb(0, 0, 0);
+}

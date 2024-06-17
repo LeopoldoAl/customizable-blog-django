@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="{% static 'css/body/general.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/register-login/header-register-login.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/register-login/body-register-login.css' %}" rel="stylesheet" type="text/css"/>
+
+    {% block ico %} {% endblock ico %}
+    <!-- Bloque js cambiante -->
+    {% block js %} {% endblock js %}
+    <!-- Bloque css cambiante -->
+    {% block css %} {% endblock css %}
+    <title>{% block title %} {% endblock title %}</title>
+<style>
+    {% if setting.active_setting %}
+    .header
+{
+        background: {{ setting.background_color_head_footer }};
+}
+    .all-content
+    {
+        background: {{ setting.background_color_head_footer }};
+    }
+    {% endif %}
+</style>
+
+</head>
+
+<body>
+<!-- Incluir menú -->
+{% include 'layout/header-register-login.html' %}
+<div class="all-content">
+    <div class="left-side">
+        {% block content %}{% endblock content %}
+    </div>
+    <div class="right-side">{% block footer %}{% endblock footer %}</div>
+</div>
+</body>
+</html>

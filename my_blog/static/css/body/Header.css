@@ -1,0 +1,369 @@
+.header
+{
+    display: flex;
+    height: 74px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+
+    justify-content:center;
+    position: fixed;
+    align-items: center;
+    font-size: 1em;
+    z-index: 2000000;
+}
+
+.section-left, .section-middle, .section-middle .section-middle-wrap, .section-right, .notify, .menu-login-register
+{
+    display: flex;
+}
+
+.section-left
+{
+    align-items: center;
+    justify-content: center;
+}
+
+.section-middle
+{
+     flex: 1;
+}
+.section-middle .section-middle-wrap
+{
+    justify-content: center;
+    flex: 1;
+}
+
+.section-right
+{
+
+}
+
+.notify
+{
+    justify-content:space-around;
+    flex: 1;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.notify-count
+{
+    position: absolute;
+    background: rgb(255, 0, 0);
+    border-radius: 7px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: rgb(255, 255, 255);
+    top: -3px;
+    right: -3px;
+    font-size: 13px;
+}
+
+.section-middle-wrap
+{
+    flex: 1;
+    justify-content:center;
+    width: 100%;
+}
+
+.logoSign
+{
+    display: none;
+    Height: 30px;
+}
+
+.pseudo-class
+{
+    display: flex;
+    margin-right: 10px;
+}
+
+.menu-options, .blog-logo, .notifications
+{
+    height: 30px;
+    object-fit: cover;
+}
+
+.searching
+{
+    object-fit: cover;
+    height: 28px;
+    border-radius: 15px;
+}
+
+
+
+.header .menu
+{
+    display: none;
+}
+
+.logo-sign
+{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+	object-direction: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+.section-middle-more-action
+{
+    height: 28px;
+    margin: 0;
+    padding:0;
+    border-radius: 15px;
+}
+
+
+
+.menu-main
+{
+    display: flex;
+    justify-content: left;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.main-pages
+{
+    margin-right: 10px;
+}
+
+.main-pages>a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 0);
+}
+
+.main-pages>a:hover
+{
+    color: rgb(255, 255, 255);
+}
+
+.main-pages>a:active
+{
+    color: rgb(0, 255, 255);
+}
+
+.tt-input
+{
+    background: white;
+}
+.tt-input::placeholder
+{
+    font-size: 15px;
+}
+
+.section-middle-more-search
+{
+    border-radius: 15px 15px 15px 15px;
+    border: 2px solid transparent;
+    font-size: 15px;
+    padding-left: 7.5px;
+    height: 30px;
+    min-width: 20px;
+    max-width: 400px;
+    width: 300px;
+}
+
+.searching
+{
+
+}
+
+.section-middle-more-action
+{
+    margin-left: -32px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    z-index: 1000;
+}
+.tt-hint
+{
+    border-radius: 15px 15px 15px 15px;
+    border: 2px solid transparent;
+    background: white;
+    font-size: 15px;
+    padding-left: 7.5px;
+    height: 30px;
+    min-width: 20px;
+    max-width: 400px;
+    width: 300px;
+}
+
+.tt-menu
+{
+
+}
+
+.tt-dataset
+{
+    max-width: auto;
+}
+.tt-suggestion
+{
+    color: black;
+    background:white;
+    padding: 10px;
+    text-align: justify;
+}
+
+/*
+.tt-suggestion:hover
+{
+    background:rgb(200, 200, 200);
+}
+*/
+
+.apply
+{
+    background:rgb(200, 200, 200);
+}
+
+.Typeahead-selectable
+{
+    background:rgb(200, 200, 200);
+}
+
+.tt-open
+{
+
+}
+
+.tt-cursor
+{
+    cursor:pointer;
+    background:rgb(200, 200, 200);
+}
+
+.tt-highlight
+{
+    color: black;
+    font-weight: bold;
+}
+
+
+.section-middle-wrap
+{
+    margin-right: 10px;
+}
+
+@media (max-width: 603px)
+{
+.logoSign
+{
+    display: flex;
+    margin-right: 10px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.logo-sign
+{
+    border-radius: 14px;
+}
+
+.menu-login-register
+{
+    display: none;
+}
+
+.menu-main
+{
+    display:none;
+}
+
+.header .menu
+{
+    display: flex;
+}
+
+.menu-options
+{
+    margin-left: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.section-middle-more-search
+{
+    width: 200px;
+}
+
+.tt-hint
+{
+    width: 200px;
+
+}
+
+.section-middle-wrap
+{
+    margin-right: 10px;
+}
+
+}
+
+
+
+@media (max-width: 376px)
+{
+.logoSign
+{
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo-sign
+{
+    border-radius: 14px;
+}
+
+.menu-login-register
+{
+    display: none;
+}
+
+.menu-main
+{
+    display:none;
+}
+
+.header .menu
+{
+    display: flex;
+}
+
+.menu-options
+{
+    margin-left: 10px;
+    display: auto;
+    cursor: pointer;
+}
+
+.section-middle-more-search
+{
+    width: 150px;
+}
+
+.tt-hint
+{
+    width: 150px;
+
+}
+
+.section-middle-wrap
+{
+    margin-right: 10px;
+}
+
+}

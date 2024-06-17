@@ -1,0 +1,38 @@
+<div class="topic"> Topics</div>
+{% if barLateral %}
+{% for post in barLateral %}
+<div class="bar-articles">
+    {% if post.image_of_head %}
+    <div class="bar-articles-image">
+        <a href="{{ post.slug }}">
+            <img class="bar-articles-images-img" src="{{ post.image_of_head.url }}">
+        </a>
+    </div>
+    {% endif %}
+    <div class="bar-articles-info">
+        <p class="bar-articles-info-title">
+            <a href="{{ post.slug }}">
+                {{ post.title|title|truncatewords:12 }}
+            </a>
+        </p>
+        <p class="bar-articles-info-description">
+            {{ post.description|truncatewords:40 }}
+        </p>
+    </div>
+</div>
+{% endfor %}
+{# if show_views==True we show the view inside the bar side #}
+{% if WeShowViews == True %}
+<div class="views">
+    <div>
+        <div>Views</div>
+        <div>{{ views }}</div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+{% if show_date %}
+<div class="js-show" style="display:none;">{{ 0 }}</div>
+{% else %}
+<div class="js-show" style="display:none;">{{ 1 }}</div>
+{% endif %}

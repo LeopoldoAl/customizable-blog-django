@@ -1,0 +1,20 @@
+*{
+	margin:0;
+	padding: 0;
+	border:0;
+	box-sizing:border-box;
+	font-family: "Roboto", sans-serif;
+}
+body{
+	padding-top: 74px;
+}
+
+.error-search
+{
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 255);
+    font-weight: bold;
+    font-size: 4em;
+    padding-top: 30px;
+}

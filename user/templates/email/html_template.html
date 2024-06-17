@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="color:black;
+        background:white;
+        font-size:16px;
+        width:100%;
+">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <style type="text/css">
+    *{
+        margin:0px;
+        padding:0px;
+        border:0px;
+    }
+
+    </style>
+
+</head>
+<body style="color:black;
+        background:white;
+        font-size:16px;
+        width:100%;
+">
+<div style="
+        position:relative;
+        display:block;
+        float:left;
+        width:20%;
+        margin-top:1%;
+">
+    <!--Logo-->
+    <a style="
+            text-decoration:none;
+            cursor:pointer;" href="{% url 'index' %}" title="Go to {{ webname }}">
+        <img style="width:100%;" src="{% if setting.logo_image %} {{ setting.logo_image.url }} {% else %} {% static 'IMG/blog.png' %} {% endif %}" alt="Logo"></a>
+</div>
+<div style="
+        position:relative;
+        display:table;
+        width:70%;
+        font-size:1rem;
+        margin-top:1%;
+        padding-left:5%;
+        padding-right:5%;">
+    <p style="font-weight:bold;">{{ welcome }}</p>
+    <p>
+        Hello <span style="font-weight:bold;">{{ userregistered }}</span>,
+        you have been registered successfully in <span style="font-weight:bold;">
+            <a style="
+                    text-decoration:none;
+                    cursor:pointer;" href="{% url 'index' %}" title="Go to {{ webname }}">{{ webname }}</a></span>
+    </p>
+    <p>
+        It's a pleasure that you have been part of our family!
+    </p>
+</div>
+</body>
+</html>

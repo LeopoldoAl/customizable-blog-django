@@ -1,0 +1,119 @@
+.topic
+{
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 1.5em;
+ 	text-align: center;
+ 	background: rgb( 255, 255, 255);
+ 	color: rgb(0, 0, 0);
+ 	background: transparent;
+}
+
+.bar-articles
+{
+	display: grid;
+	grid-template-columns: 47% 47%;
+	margin-left: 3%;
+	margin-right: 3%;
+	align-items: top;
+	background: transparent;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.bar-articles-images-img
+{
+	width: 100%;
+	object-fit:cover;
+	object-position: 50% 50%;
+}
+
+.bar-articles-info
+{
+    background: transparent;
+}
+
+.bar-articles-info-title, .bar-articles-info-description
+{
+	padding: 0px 10px 0px 5px;
+	text-align: left;
+	background: transparent;
+}
+
+.bar-articles-info-title a
+{
+	text-decoration: none;
+	color: rgb(0, 0, 255);
+	transition: all 0.15s;
+}
+
+.bar-articles-info-title a:visited
+{
+	color: brown;
+}
+
+.bar-articles-info-title a:hover
+{
+	color: rgb(255, 0, 255);
+}
+
+.bar-articles-info-title a:active
+{
+	color: red;
+}
+
+.bar-articles-info-title
+{
+	font-weight: bold;
+	font-size: 1em;
+	background: transparent;
+}
+
+.bar-articles-info-description
+{
+	font-weight: bold;
+	font-size: 1em;
+	background: transparent;
+	color: rgb(0, 0, 0);
+}
+
+.views
+{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    background: papayawhip;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.views>div:first-child
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.views>div>div:first-child
+{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.views>div>div:last-child
+{
+    display: flex;
+    justify-content: center;
+    color: rgb(100, 100, 50);
+}
+
+
+@media (max-width: 603px)
+{
+
+}
+

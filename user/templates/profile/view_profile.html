@@ -1,0 +1,99 @@
+{% extends 'layout/body-register-login.html' %}
+{% load static %}
+
+{% block ico %}
+{% if setting.active_setting %}
+<!-- enter -->
+<link rel="icon" type="image/x-icon" href="{% if setting.ico_image_therty_by_therty_px %}{{ setting.ico_image_therty_by_therty_px.url }}{% else %} {% static 'IMG/icon.ico' %}{% endif %}">
+{% else %}
+<link rel="icon" type="image/x-icon" href="{% if setting.logo_image %} {{ setting.logo_image.url }} {% else %} {% static 'IMG/blog.png' %} {% endif %}">
+{% endif %}
+{% endblock ico %}
+
+{% block title %}
+Edit Profile
+{% endblock title %}
+
+
+
+{% block css %}
+    <link href="{% static 'css/profile/view-profile.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/profile/view-profile-articles.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+{% if user.profile %}
+			<div class="profile-form-general">
+				<div class="profile-title-head">Edit Profile</div>
+				<!-- First data -->
+				<div class="profile-view-profile">
+					<div class="profile-view-img">
+                    {% if user.profile.photo %}
+						<img class="profile-view-img-real"  src="{{ user.profile.photo.url }}" alt="Profile">
+                    {% else %}
+                        <img class="profile-view-img-real"  src="{% if setting.profile_default_image %} {{ setting.profile_default_image.url }} {% else %}{% static 'IMG/profile.png' %}{% endif %}" alt="Profile">
+                    {% endif %}
+					</div>
+					<div class="profile-data">
+						<div class="block-one"><div class="profile-name">Nombre:</div><div class="profile-description">{{ user.first_name|title }}&nbsp;{{ user.last_name|title }}</div></div>
+						<div class="block-two"><div class="profile-name">Profession:</div><div class="profile-description">{{ user.profile.profession|title }}</div></div>
+						<div class="block-three"><div class="profile-name">About:</div><div class="profile-description">{{ user.profile.about }}</div></div>
+					</div>
+				</div>
+				<div class="profile-social-network">
+				{% if user.profile.twitter %}
+					<div class="profile-t"><a href="{{ user.profile.twitter }}" title="twitter">Twitter</a></div>
+				{% endif %}
+				{% if user.profile.linkedin %}
+					<div class="profile-l"><a href="{{ user.profile.linkedin }}" title="linkedin">Linkedin</a></div>
+				{% endif %}
+				{% if user.profile.facebook %}
+					<div class="profile-f"><a href="{{ user.profile.facebook }}" title="facebook">Facebook</a></div>
+				{% endif %}
+				</div>
+			</div>
+
+
+{% if posts %}
+			<div class="articles-title">Articles</div>
+			<!-- In here go the article information -->
+			<div class="profile-articles">
+{% for art in posts %}
+				<div class="profile-articles-content">
+					<div class="profile-articles-content-img">
+                        <a href="{% url 'post' art.slug %}">
+                        {% if art.image_of_head %}
+                            <img class="profile-articles-content-img-real"  src="{{ art.image_of_head.url }}" alt="Article Photo">
+                        {% else %}
+                            <img class="profile-articles-content-img-real"  src="#" alt="Null Photo">
+                        {% endif %}
+                        </a>
+                    </div>
+					<div class="profile-articles-content-data">
+						<div class="profile-articles-content-data-title"><a href="{% url 'post' art.slug %}">{{ art.title|title|truncatewords:12 }}</a></div>
+						<div class="profile-articles-content-data-description">{{ art.description|truncatewords:40 }}</div>
+					</div>
+				</div>
+{% endfor %}
+			</div>
+
+{% endif %}
+{% else %}
+            <div class="without-profile"><p class="msg-profile">The user <span class="user-without-profile">{{ user.username|title }}</span> hasn't created a profile yet.</p></div>
+{% endif %}
+
+{% else %}
+	<div class="without-profile">
+		<p class="msg-profile">
+			<span class="user-without-profile">Sorry!</span> For seeing this profile, please you should register!
+		</p>
+	</div>
+{% endif %}
+{% endblock content %}
+
+{% block footer %}
+{% include 'layout/footer.html' %}
+{% endblock footer %}

@@ -1,0 +1,152 @@
+.profile-form-general
+{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	color: red;
+	justify-content: center;
+	font-size: 1em;
+	font-family: arial, auto;
+}
+
+.profile-title-head
+{
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	font-size: 1.5em;
+	margin: 20px;
+}
+
+.profile-view-profile
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.profile-view-img
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	flex: 1;
+}
+
+.profile-view-img-real
+{
+	height: 150px;
+	width: 150px;
+	border-radius: 75px;
+	object-position:center;
+	object-fit: cover;
+}
+
+.profile-data
+{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+	margin-left: 10px;
+}
+
+.block-one, .block-two, .block-three
+{
+	display: flex;
+	flex-direction: row;
+	
+}
+
+.block-one
+{
+
+}
+
+.block-two
+{
+	
+}
+
+.block-three
+{
+	
+}
+
+.profile-name, .profile-description
+{
+	margin-bottom: 30px;
+}
+
+.profile-name
+{
+	width: 100px;
+	color: rgb(0, 0, 0);
+}
+
+.profile-description
+{
+
+}
+
+.block-three>.profile-description:last-child
+{
+	width: 54%;
+
+}
+
+.profile-social-network
+{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	justify-content: center;
+}
+
+.profile-t, .profile-l, .profile-f
+{
+	margin-left: 10px;
+	font-family: arial, auto;
+}
+
+.profile-t>a, .profile-l>a, .profile-f>a
+{
+	text-decoration: none;
+}
+
+.profile-t:hover>a, .profile-l:hover>a, .profile-f:hover>a
+{
+	color: rgb(255, 255, 0);
+}
+
+.profile-t
+{
+
+}
+
+.profile-l
+{
+	
+}
+
+.profile-f
+{
+	
+}
+
+.without-profile
+{
+    display:flex;
+    justify-content:center;
+    font-size: 30px;
+    font-family: auto;
+    color: black;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.without-profile>.msg-profile>.user-without-profile
+{
+    color: red;
+}

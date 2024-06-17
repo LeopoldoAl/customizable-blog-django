@@ -1,0 +1,61 @@
+.gostdata
+{
+    /* We change this property to flex, but whrn we load the page will be 'none'*/
+	display: none;
+	flex-direction: column;
+	text-align: center;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	width: 250px;
+	border: 1px solid rgb(0, 220, 0);
+	padding-top: 10px;
+	border-radius: 20px 0px 0px 20px;
+	position: fixed;
+	top: 74px;
+	right: 0;
+	overflow-y:auto;
+}
+
+.img-profile
+{
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	object-direction: center;
+	border-radius: 25px;
+	background: rgb(0, 0, 0);
+}
+.words-menus-profile
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.words-menus
+{
+	background: rgb(0, 0, 0);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 20px;
+
+}
+
+.words-menus:hover
+{
+	background: rgb(70, 70, 70);
+}
+
+.words-menus a
+{
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.words-menus a:hover
+{
+	font-style: italic;
+	color: rgb(0, 200, 0);
+}

@@ -1,0 +1,47 @@
+{% extends 'layout/body-register-login.html' %}
+{% load static %}
+
+{% block ico %}
+{% if setting.active_setting %}
+<!-- enter -->
+<link rel="icon" type="image/x-icon" href="{% if setting.ico_image_therty_by_therty_px %}{{ setting.ico_image_therty_by_therty_px.url }}{% else %} {% static 'IMG/icon.ico' %}{% endif %}">
+{% else %}
+<link rel="icon" type="image/x-icon" href="{% static 'IMG/icon.ico' %}">
+{% endif %}
+{% endblock ico %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register-login/delete-user.css' %}">
+{% endblock css %}
+
+{% block title %}
+Delete account
+{% endblock title %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<form method="POST" class="form-general">
+    <div>
+        <div class="mano">Delete account</div>
+        <div>{{ msguser }}</div>
+        <!-- Add token -->
+        <div>
+            {% csrf_token %}
+        </div>
+        <!-- Alert of account elimination  -->
+        <div class="alert-confirm">{{ msg }}</div>
+        <!-- Button for confirm or return -->
+        <div>
+            <input type="submit" value="Confirm" class="input-login">
+        </div>
+        <div class="go-back">
+            <a type="submit" class="btn-submit back" href="{% url 'edit_profile' %}">Go back</a>
+        </div>
+    </div>
+</form>
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% load static %}
+{% block css %}
+<link href="{% static 'css/notifications/show-notifications.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/notifications/show-notifications-two.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+	{% for data_user in user_data %}
+		{% if data_user.status_notification == 1 %}
+			<div class="my-notifications">
+				<div class="img-profile"><img width="40px" height="40px" class="img-profile-real" src="{{ data_user.slug_image_user_that_commented }}" alt="Profile"/></div>
+				<div class="comment-description">
+					{{ data_user.data_of_message|safe }} <a href="{{ data_user.article_id.slug }}" class="article" title="View">"{{ data_user.article_id.title }}"</a></div>
+				<div class="comment-description-date">{{ data_user.updated }}</div>
+			</div>
+		{% else %}
+			<div class="my-notifications-seen">
+				<div class="img-profile"><img width="40px" height="40px" class="img-profile-real" src="{{ data_user.slug_image_user_that_commented }}" alt="Profile"/></div>
+				<div class="comment-description">
+					{{ data_user.data_of_message|safe }} <a href="{{ data_user.article_id.slug }}" class="article" title="View">"{{ data_user.article_id.title }}"</a></div>
+				<div class="comment-description-date">{{ data_user.updated }}</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+
+
+{% if user_data2 %}
+	{% for data_user in user_data2 %}
+		{% if data_user.status_notification == True %}
+			<div class="my-notifications">
+				<div class="img-profile"><img width="40px" height="40px" class="img-profile-real" src="{{ data_user.slug_image_user_that_commented }}" alt="Profile"/></div>
+				<div class="comment-description">
+					{{ data_user.data_of_message|safe }} <a href="{{ data_user.article_id.slug }}" class="article" title="View">"{{ data_user.article_id.title }}"</a></div>
+				<div class="comment-description-date">{{ data_user.updated }}</div>
+			</div>
+		{% else %}
+			<div class="my-notifications-seen">
+				<div class="img-profile"><img width="40px" height="40px" class="img-profile-real" src="{{ data_user.slug_image_user_that_commented }}" alt="Profile"/></div>
+				<div class="comment-description">
+					{{ data_user.data_of_message|safe }} <a href="{{ data_user.article_id.slug }}" class="article" title="View">"{{ data_user.article_id.title }}"</a></div>
+				<div class="comment-description-date">{{ data_user.updated }}</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}

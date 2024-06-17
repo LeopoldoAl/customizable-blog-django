@@ -1,0 +1,58 @@
+{% extends 'layout/body-register-login.html' %}
+{% load static %}
+{% block ico %}
+{% if setting.active_setting %}
+<!-- enter -->
+<link rel="icon" type="image/x-icon" href="{% if setting.ico_image_therty_by_therty_px %}{{ setting.ico_image_therty_by_therty_px.url }}{% else %} {% static 'IMG/icon.ico' %}{% endif %}">
+{% else %}
+<link rel="icon" type="image/x-icon" href="{% static 'IMG/icon.ico' %}">
+{% endif %}
+{% endblock ico %}
+{% block css %}
+<link href="{% static 'css/profile/edit-profile.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+{% block title %}
+Edit Profile
+{% endblock title %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<form method="post" enctype="multipart/form-data" class="form-general">
+    <div class="block1">
+        <p class="mano">Edit Profile</p>
+    </div>
+    <div>
+        <!-- Add token -->
+        {% csrf_token %}
+    </div>
+    <div class="form-general-data">
+        <!-- Get Form  -->
+        {{ user_form.as_div }}
+        <!-- Get Form  -->
+        {{ profile_form.as_div }}
+    </div>
+    <div class="block2">
+        <div>
+            <p class="change-password">
+                <a href="{% url 'change_password' %}">Change password</a>
+            </p>
+        </div>
+        <div>
+            <input type="submit" value="Edit" class="btn-submit">
+        </div>
+        <div>
+            <p class="change-password">
+                <a href="{% url 'delete_user' %}">Delete user</a>
+            </p>
+        </div>
+    </div>
+</form>
+{% endif %}
+
+{% endblock content %}
+
+{% block footer %}
+{% include 'layout/footer.html' %}
+{% endblock footer %}

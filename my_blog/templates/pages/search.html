@@ -1,0 +1,21 @@
+{% if articles %}
+{% for post in articles %}
+<div class="search-articles">
+    {% if post.image_of_head %}
+    <div class="search-articles-image">
+        <a href="{{ post.slug }}">
+            <img class="search-articles-images-img" src="{{ post.image_of_head.url }}">
+        </a>
+    </div>
+    {% endif %}
+    <div class="search-articles-info">
+        <p class="search-articles-info-title">
+            <a href="{{ post.slug }}">{{ post.title|title|truncatewords:12|safe }}</a>
+        </p>
+        <p class="search-articles-info-description">
+            {{ post.description|truncatewords:40|safe }}
+        </p>
+    </div>
+</div>
+{% endfor %}
+{% endif %}

@@ -1,0 +1,92 @@
+.answer
+{
+	display: flex;
+	align-items: top;
+	background: rgb(100, 100, 100);
+}
+
+.userProfile-left
+{
+	 display: flex;
+	 justify-content: center;
+}
+
+.img-wrap
+{
+	height: 30px;
+	width: 30px;
+	border: 1px solid transparent;
+	border-radius: 15px;
+    margin-left: 5px;
+}
+
+.userProfile-img
+{
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 50%;
+}
+
+.userProfile-right
+{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	background: rgb(0, 0, 0);
+	border-radius: 5px;
+	margin-left: 5px;
+	border: 1px solid transparent;
+	border-radius: 10px;
+}
+
+.reply-to-name
+{
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 0.8em;
+	color: rgb(255,255,255);
+}
+
+.reply-meta-wrap
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.reply-meta
+{
+	width: 90%;
+	resize:none;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-falmily: arial, auto;
+}
+
+.the-father
+{
+	display: flex;
+	justify-content: right;
+}
+
+.reply-button
+{
+	margin-right: 25px;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 0);
+	text-align: center;
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: 1px solid transparent;
+}
+
+.reply-button:hover
+{
+	color: rgb(255, 255, 255);
+}

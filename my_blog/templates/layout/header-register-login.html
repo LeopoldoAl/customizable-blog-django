@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="header">
+    <div class="section-left">
+        <!-- number 2 -->
+        <div class="logo">
+            <!--Logo-->
+            <a href="{% url 'index' %}" title="Go to main page"><img class="blog-logo" src="{% if setting.logo_image %} {{ setting.logo_image.url }} {% else %} {% static 'IMG/blog.png' %} {% endif %}"
+                                                                     alt="Logo"></a>
+        </div>
+    </div>
+    <!-- number 3 -->
+    {% if not request.user.is_authenticated %}
+    <div class="section-right">
+        <div class="menu-login-register">
+            <ul>
+                <li><a href="{% url 'register' %}">Register </a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</div>

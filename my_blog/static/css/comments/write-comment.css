@@ -1,0 +1,83 @@
+    .comment
+{
+	display: grid;
+	grid-template-rows:1fr;
+	justify-content:stretch;
+	background: rgb(0, 0, 0);
+	border-radius: 5px;
+	border: 1px solid transparent;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.stars
+{
+	text-align: center;
+	font-size: 2em;
+}
+
+.stars span
+{
+	color: rgb( 255, 255, 0);
+	cursor: pointer;
+}
+
+.stars span:hover
+{
+	color: white;
+}
+
+.comment-msg
+{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.message-error
+{
+	text-align: end;
+	color: yellow;
+	padding-right: 4%;
+	height: 25px;
+}
+
+.message-error p
+{
+	margin: 0;
+}
+.comment-msg textarea
+{
+	width: 90%;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-bottom:10px;
+	resize:none;
+    border: 1px solid transparent;
+	border-radius: 10px;
+}
+
+.comment-send
+{
+	text-align: end;
+	margin-bottom: 10px;
+}
+
+.sending
+{
+	margin-right: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+	background: transparent;
+}
+
+.sending:hover
+{
+	color: rgb(255, 255, 0);
+}

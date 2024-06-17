@@ -1,0 +1,87 @@
+{% extends 'layout/layout-articles.html' %}
+{% load static %}
+{% block ico %}
+{% if setting.active_setting %}
+<!-- enter -->
+<link rel="icon" type="image/x-icon" href="{% if setting.ico_image_therty_by_therty_px %}{{ setting.ico_image_therty_by_therty_px.url }}{% else %} {% static 'IMG/icon.ico' %}{% endif %}">
+{% else %}
+<link rel="icon" type="image/x-icon" href="{% static 'IMG/icon.ico' %}">
+{% endif %}
+{% endblock ico %}
+{% block title %}
+{{ articles.title|title }}
+{% endblock title %}
+{% block description %}
+{% if setting.active_setting %}
+{{ setting.description_of_blog }}
+{% else %}
+My friend comes to Christ that with love he calls you
+{% endif %}
+{% endblock description %}
+{% block content %}
+{% if articles %}
+
+<p class="post-title">{{ articles.title }}</p>
+{% if articles.image_of_head %}
+<div class="post-img">
+    <img class="post-img-show"
+         src="{{ articles.image_of_head.url }}"
+         alt="{{ articles.image_of_head.url }}">
+</div>
+{% endif %}
+
+<div class="post-body">
+    {{ articles.body|safe }}
+</div>
+{% endif %}
+<div class="post-author">
+    {% if articles.user_id.profile.photo %}
+    <div class="author-img">
+        <img class="author-img-show" src="{{ articles.user_id.profile.photo.url }}"
+             alt="View profile">
+    </div>
+    <div class="author-name">
+        <div class="author-name-show">
+            Author: <a href="{% url 'view_profile' articles.user_id.pk %}" title="View profile">
+            {{ articles.user_id.profile.user.first_name|title }} {{ articles.user_id.profile.user.last_name|title }}</a>
+        </div>
+        <div class="author-time-public">Written, 42 days ago</div>
+    </div>
+    {% else %}
+    {% if photo %}
+    <div class="author-img">
+        <img class="author-img-show" src="{{ photo.url }}" alt="View profile">
+    </div>
+    {% else %}
+    <div class="author-img">
+        <img class="author-img-show" src="{% static 'IMG/profile.png' %}">
+    </div>
+    {% endif %}
+    <div class="author-name">
+        <div class="author-name-show">
+            Author: {{ username|title }} {{ lastname|title }}
+        </div>
+        <p class="author-time-public js-comment-date">{{ articles.created }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
+{% block commentaries %}
+<!-- Here we are working with the user comments -->
+{% include 'comment/write-commentary.html' %}
+<!-- If exists commentaries are showed here -->
+{% if old_comment %}
+{% include 'comment/show-old-commentaries.html' %}
+{% endif %}
+
+<!--
+<p>http://{{ request.headers.host }}{{ request.path_info }}</p>
+-->
+{% endblock commentaries %}
+{% block footer %}
+{% include 'layout/footer.html' %}
+{% endblock footer%}
+{% block jsn %}
+<script type="module" src="{% static 'JS/comment/notifications.js' %}"></script>
+<script type="module" src="{% static 'JS/comment/article.js' %}"></script>
+{% endblock jsn %}
